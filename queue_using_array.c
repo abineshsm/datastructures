@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#define MAX_SIZE 101
+#define MAX_SIZE 3
 
 char queue[MAX_SIZE];
 int head = -1, tail = -1;
@@ -14,14 +14,20 @@ bool isEmpty()
 
 void enqueue(char data)
 {
-    if (tail == MAX_SIZE - 1)
+    if (isEmpty())
     {
-        printf("Queue is full!\n");
+        head++;
+        queue[++tail] = data;
         return;
     }
-    if (head == -1 && tail == -1)
-        head++;
-    queue[++tail] = data;
+    tail = ++tail % MAX_SIZE;
+    if (head == tail)
+    {
+        printf("\nQueue is full!\n");
+        tail = (tail + MAX_SIZE - 1) % MAX_SIZE;
+        return;
+    }
+    queue[tail] = data;
 }
 
 char dequeue()
@@ -29,17 +35,17 @@ char dequeue()
     char data;
     if (isEmpty())
     {
-        printf("Queue is empty!\n");
+        printf("\nQueue is empty!\n");
+        return ' ';
     }
-    else if (head == tail)
+    data = queue[head];
+    if (head == tail)
     {
-        data = queue[head];
-        head = tail = -1;
+        head = -1;
+        tail = -1;
     }
     else
-    {
-        data = queue[head++];
-    }
+        head = ++head % MAX_SIZE;
     return data;
 }
 
@@ -53,6 +59,12 @@ int main()
 {
     enqueue('a');
     enqueue('b');
+    printf("%c ", dequeue());
+    enqueue('c');
+    enqueue('d');
+    enqueue('e');
+    printf("%c ", dequeue());
+    printf("%c ", dequeue());
     printf("%c ", dequeue());
     printf("%c ", dequeue());
 }
