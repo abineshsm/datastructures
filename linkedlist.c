@@ -137,28 +137,28 @@ void print()
     printf("\n");
 }
 
-int main()
-{
-    head = NULL;
-    int data[] = {2, 3, 5};
-    int n = sizeof(data) / sizeof(data[0]);
-    for (int i = 0; i < n; i++)
-    {
-        // insertOnHead(data[i]);
-        insertOnTail(data[i]);
-    }
-    // print();
-    insert(1, 1);
-    insert(4, 4);
-    insert(6, 6);
-    print();
-    // delete(6);
-    // delete(4);
-    // delete(1);
-    // print();
-    // reverse();
-    // reverseRecursion(head);
-    // print();
-    // printRecursion(head);
-    printReverseRecursion(head);
-}
+// int main()
+// {
+//     head = NULL;
+//     int data[] = {2, 3, 5};
+//     int n = sizeof(data) / sizeof(data[0]);
+//     for (int i = 0; i < n; i++)
+//     {
+//         // insertOnHead(data[i]);
+//         insertOnTail(data[i]);
+//     }
+//     // print();
+//     insert(1, 1);
+//     insert(4, 4);
+//     insert(6, 6);
+//     print();
+//     // delete(6);
+//     // delete(4);
+//     // delete(1);
+//     // print();
+//     // reverse();
+//     // reverseRecursion(head);
+//     // print();
+//     // printRecursion(head);
+//     printReverseRecursion(head);
+// }
