@@ -1,4 +1,4 @@
-class Node {
+class ListNode {
     constructor(data, next = null) {
         this.data = data;
         this.next = next;
@@ -11,7 +11,7 @@ class LinkedList {
     }
 
     add(data) {
-        let node = new Node(data);
+        let node = new ListNode(data);
         if (!this.head) {
             this.head = node;
             return;
@@ -24,7 +24,7 @@ class LinkedList {
     }
 
     insert(data, pos) {
-        let node = new Node(data);
+        let node = new ListNode(data);
         if (!this.head) {
             this.head = node;
             return;
@@ -39,16 +39,16 @@ class LinkedList {
         node.next = temp;
     }
 
-    delete(index){
-        if(!this.head)
+    delete(index) {
+        if (!this.head)
             return;
-        if(index == 1){
+        if (index == 1) {
             this.head = this.head.next;
             return;
         }
         let prev = null;
         let current = this.head;
-        while(current.next != null && index > 1){
+        while (current.next != null && index > 1) {
             prev = current;
             current = current.next;
             index--;
@@ -69,7 +69,8 @@ class LinkedList {
     }
 }
 
-module.exports = LinkedList;
+module.exports = { ListNode, LinkedList };
+
 
 // let list = new LinkedList();
 // list.add(1);
