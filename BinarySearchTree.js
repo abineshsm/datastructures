@@ -42,6 +42,8 @@ class BinarySearchTree {
     }
 }
 
+module.exports = BinarySearchTree;
+
 let bst = new BinarySearchTree();
 bst.root = bst.insert(bst.root, 11);
 bst.root = bst.insert(bst.root, 6);
@@ -54,4 +56,4 @@ bst.root = bst.insert(bst.root, 3);
 // bst.root = bst.insert(bst.root, 10);
 bst.root = bst.insert(bst.root, 2);
 // bst.inorderPrint(bst.root);
-console.log(bst.diameter(bst.root));
+// console.log(bst.diameter(bst.root));

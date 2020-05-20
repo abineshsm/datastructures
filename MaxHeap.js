@@ -14,11 +14,11 @@ class PriorityQueue {
         let leftChild = 2 * parent;
         let rightChild = 2 * parent + 1;
         let largest = parent;
-        if (leftChild <= len && this.heap[leftChild] > this.heap[parent])
+        if (leftChild < len && this.heap[leftChild] > this.heap[parent])
             largest = leftChild;
         else
             largest = parent;
-        if (rightChild <= len && this.heap[rightChild] > this.heap[largest])
+        if (rightChild < len && this.heap[rightChild] > this.heap[largest])
             largest = rightChild;
         if (largest != parent) {
             [this.heap[parent], this.heap[largest]] = [this.heap[largest], this.heap[parent]];
